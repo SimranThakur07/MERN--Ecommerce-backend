@@ -17,7 +17,7 @@ if(!user) return next(new ErrorHandler("Invalid Email", 401))
 
  
  const token = jwt.sign({ userId: user._id }, 'yourSecretKey');
-
+ 
  return res.status(200).json({
     success: true,
     message: 'Login Successfully',

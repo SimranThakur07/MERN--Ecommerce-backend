@@ -9,7 +9,7 @@ const categorySchema = mongoose.Schema({
         type: String,
         required: [true, 'Please add Category Image'],
     },
-});
+}); 
 
 
 export const Category = mongoose.model("Category", categorySchema);

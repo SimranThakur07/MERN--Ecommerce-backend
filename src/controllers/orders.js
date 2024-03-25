@@ -65,7 +65,7 @@ export const newOrder = TryCatch(async (req, res, next) => {
     return next(new ErrorHandler("Please provide all details", 400));
   const order = await Order.create({
     shippingInfo, 
-    user,
+    user, 
     subTotal,
     total,
     tax,

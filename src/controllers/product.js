@@ -25,14 +25,14 @@ export const getBestProduct = TryCatch(async (req, res, next) => {
   products = JSON.parse(nodeCache.get("bestProducts"))
 
 else{
-  products = await Product.find({}).sort({ createdAt: -1 }).limit(40);
+  products = await Product.find({}).sort({ createdAt: -1 }).limit(14);
   nodeCache.set("bestProducts",JSON.stringify(products))
 }
 return res.status(200).json({
     success: true, 
     products, 
   });
-});
+}); 
 
 export const getCategory = TryCatch(async (req, res, next) => {
 let categories;
